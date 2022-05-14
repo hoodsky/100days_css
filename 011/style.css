@@ -1,0 +1,159 @@
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes leg-swing {
+  0%,
+  100% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  50% {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+}
+
+@keyframes leg-swing {
+  0%,
+  100% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  50% {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+}
+
+@-webkit-keyframes shoe-turn {
+  0%,
+  100% {
+    -webkit-transform: rotate(-10deg) translateY(-5px) translateX(10px);
+            transform: rotate(-10deg) translateY(-5px) translateX(10px);
+  }
+  25% {
+    -webkit-transform: rotate(0deg) translateY(0px) translateX(0px);
+            transform: rotate(0deg) translateY(0px) translateX(0px);
+  }
+  50% {
+    -webkit-transform: rotate(10deg) translateY(-10px) translateX(10px);
+            transform: rotate(10deg) translateY(-10px) translateX(10px);
+  }
+  75% {
+    -webkit-transform: rotate(0deg) translateY(-20px) translateX(0);
+            transform: rotate(0deg) translateY(-20px) translateX(0);
+  }
+}
+
+@keyframes shoe-turn {
+  0%,
+  100% {
+    -webkit-transform: rotate(-10deg) translateY(-5px) translateX(10px);
+            transform: rotate(-10deg) translateY(-5px) translateX(10px);
+  }
+  25% {
+    -webkit-transform: rotate(0deg) translateY(0px) translateX(0px);
+            transform: rotate(0deg) translateY(0px) translateX(0px);
+  }
+  50% {
+    -webkit-transform: rotate(10deg) translateY(-10px) translateX(10px);
+            transform: rotate(10deg) translateY(-10px) translateX(10px);
+  }
+  75% {
+    -webkit-transform: rotate(0deg) translateY(-20px) translateX(0);
+            transform: rotate(0deg) translateY(-20px) translateX(0);
+  }
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 3px;
+  -webkit-box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+  background: #1970bd;
+  background: radial-gradient(circle, #1970bd 0%, #1b3953 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1970bd", endColorstr="#1b3953", GradientType=1);
+  overflow: hidden;
+}
+
+.floor {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 150px;
+  background: #474747;
+}
+
+.men {
+  -webkit-animation: fade-in .8s ease-out 1s;
+          animation: fade-in .8s ease-out 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.leg {
+  z-index: 4;
+  position: absolute;
+  top: 0px;
+  left: 150px;
+  width: 150px;
+  height: 250px;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+}
+
+.shoe {
+  z-index: 5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+  height: 50px;
+  background: url("https://i.ibb.co/RcQPRgP/Seek-Png-com-white-vans-png-1938283.png") no-repeat center center;
+  background-size: contain;
+  -webkit-transform-origin: 0 95%;
+          transform-origin: 0 95%;
+}
+
+.right {
+  -webkit-animation: leg-swing 2s ease-in-out 1s infinite;
+          animation: leg-swing 2s ease-in-out 1s infinite;
+}
+
+.right .shoe {
+  -webkit-animation: shoe-turn 2s ease-in-out 1s infinite;
+          animation: shoe-turn 2s ease-in-out 1s infinite;
+}
+
+.left {
+  -webkit-animation: leg-swing 2s ease-in-out infinite;
+          animation: leg-swing 2s ease-in-out infinite;
+}
+
+.left .shoe {
+  -webkit-animation: shoe-turn 2s ease-in-out infinite;
+          animation: shoe-turn 2s ease-in-out infinite;
+}
+/*# sourceMappingURL=style.css.map */

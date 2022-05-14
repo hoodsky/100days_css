@@ -1,0 +1,347 @@
+//TO%
+@function prc($pxOne, $pxTwo) {
+    $result: ($pxOne/$pxTwo)*100%;
+    @return $result;
+}
+
+//REM
+@function rem($px) {
+    $result: ($px/16)+rem;
+    @return $result;
+}
+
+//EM
+@function em($px) {
+    $result: ($px/16)+em;
+    @return $result;
+}
+
+$theme-color: #25738b;
+$user1: url('https://images.unsplash.com/photo-1651796444672-46f168ee93cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80') center center;
+$user2: url('https://images.unsplash.com/photo-1651851421019-793db5d873f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80') center center;
+$user3: url('https://images.unsplash.com/photo-1643513333710-d5fa25591d2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80') center center;
+$user4: url('https://images.unsplash.com/photo-1651784161888-62badc9eca41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80') center center;
+$user1Name: 'John Doe';
+$user2Name: 'Jessica Amber';
+$user3Name: 'Rex';
+$user4Name: 'Elisa';
+
+.frame {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    padding: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 3px;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+    font-family: 'Poppins',
+        sans-serif;
+
+    [class^=profile] {
+        position: relative;
+
+        &:hover {
+            .overlay {
+                opacity: 1;
+                transition: all .3s;
+            }
+
+            .plus {
+                opacity: 1;
+                transform: scale(1);
+                transition: .3s all .3s;
+
+            }
+        }
+
+        .overlay {
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(3px);
+            opacity: 0;
+            transition: .5s all .5s;
+        }
+
+        .plus {
+            position: absolute;
+            left: calc(50% - 30px);
+            top: calc(50% - 30px);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: $theme-color;
+            opacity: 0;
+            transform: scale(2);
+            transition: .5s all .5s;
+            cursor: pointer;
+            box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.3);
+
+            &:hover {
+                box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.5);
+                transition: .3s all;
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                border-radius: 2px;
+                width: 40px;
+                height: 4px;
+                background: #fff;
+                top: 28px;
+                left: 10px;
+                transform: rotate(0deg);
+                transition: all .5s;
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                border-radius: 2px;
+                width: 40px;
+                height: 4px;
+                background: #fff;
+                top: 28px;
+                left: 10px;
+                transform: rotate(90deg);
+                transition: all .5s;
+            }
+        }
+    }
+
+    .profile1 {
+        border-radius: 3px 0 0 0;
+        background: $user1;
+        background-size: cover;
+    }
+
+    .profile2 {
+        border-radius: 0 3px 0 0;
+        background: $user2;
+        background-size: cover;
+    }
+
+    .profile3 {
+        border-radius: 0 0 0 3px;
+        background: $user3;
+        background-size: cover;
+    }
+
+    .profile4 {
+        border-radius: 0 0 3px 0;
+        background: $user4;
+        background-size: cover;
+    }
+}
+
+[class^=detail] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 2;
+    pointer-events: none;
+    font-size: 0;
+    transition: all .5s;
+
+    &.show {
+        pointer-events: all;
+        opacity: 1;
+        transition: all .5s;
+
+        .header {
+            transform: translate(0, 0);
+            transition: all .5s ease-in;
+        }
+
+        .close {
+            transform: translate(0, 0);
+            transition: .4s all .5s ease-out;
+        }
+
+        .avatar {
+            transform: translate(0, 0);
+            transition: 1s all .5s ease-out;
+        }
+
+        .info {
+            transform: translate(0, 0);
+            transition: all .5s ease-in;
+        }
+    }
+
+    .close {
+        position: absolute;
+        background: $theme-color;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        top: 20px;
+        right: 20px;
+        box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.3);
+        transform: translate(0, -100px);
+        transition: all .5s ease-in;
+        z-index: 5;
+        cursor: pointer;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 25px;
+            height: 2px;
+            background: #fff;
+            top: 24px;
+            left: 13px;
+            transform: rotate(45deg);
+            border-radius: 1px;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 25px;
+            height: 2px;
+            background: #fff;
+            top: 24px;
+            left: 13px;
+            transform: rotate(-45deg);
+            border-radius: 1px;
+        }
+    }
+
+    .header {
+        height: 50%;
+        width: 100%;
+        transform: translate(0, -220px);
+        transition: all .6s ease-out .4s;
+        background: url('https://images.unsplash.com/photo-1651742363533-effe9ee7c8c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80') center center;
+        background-size: cover;
+    }
+
+    .avatar {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        top: calc(50% - 100px);
+        left: calc(50% - 75px);
+        box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.3);
+        border: 1px solid #fff;
+        z-index: 5;
+        transform: translate(0, -270px);
+        transition: all .5s ease-out;
+    }
+
+    .info {
+        height: 50%;
+        width: 100%;
+        bottom: 0;
+        background: $theme-color;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        transform: translate(0, 220px);
+        transition: all .6s ease-out .4s;
+
+        .name {
+            position: absolute;
+            top: 60px;
+            height: 30px;
+
+            &::before {
+                height: 30px;
+                color: #ffffffcb;
+                font-size: 30px;
+            }
+        }
+
+    }
+}
+
+.detail1 {
+
+    .avatar {
+        background: $user1;
+        background-size: cover;
+    }
+
+    .name::before {
+        content: $user1Name;
+    }
+}
+
+.detail2 {
+
+    .avatar {
+        background: $user2;
+        background-size: cover;
+    }
+
+    .name::before {
+        content: $user2Name;
+    }
+}
+
+.detail3 {
+
+    .avatar {
+        background: $user3;
+        background-size: cover;
+    }
+
+    .name::before {
+        content: $user3Name;
+    }
+}
+
+.detail4 {
+
+    .avatar {
+        background: $user4;
+        background-size: cover;
+    }
+
+    .name::before {
+        content: $user4Name;
+    }
+}
+
+
+
+.action {
+    display: flex;
+    position: relative;
+
+
+    .btn1::before {
+        position: absolute;
+        top: 10px;
+        left: -85px;
+        content: url("data: image/svg+xml; charset=UTF-8, <svg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M12.5937 14C12.5937 14.373 12.7419 14.7306 13.0056 14.9944C13.2693 15.2581 13.627 15.4062 14 15.4062C14.3729 15.4062 14.7306 15.2581 14.9944 14.9944C15.2581 14.7306 15.4062 14.373 15.4062 14C15.4062 13.627 15.2581 13.2694 14.9944 13.0056C14.7306 12.7419 14.3729 12.5938 14 12.5938C13.627 12.5938 13.2693 12.7419 13.0056 13.0056C12.7419 13.2694 12.5937 13.627 12.5937 14V14ZM18.4531 14C18.4531 14.373 18.6013 14.7306 18.865 14.9944C19.1287 15.2581 19.4864 15.4062 19.8594 15.4062C20.2323 15.4062 20.59 15.2581 20.8537 14.9944C21.1174 14.7306 21.2656 14.373 21.2656 14C21.2656 13.627 21.1174 13.2694 20.8537 13.0056C20.59 12.7419 20.2323 12.5938 19.8594 12.5938C19.4864 12.5938 19.1287 12.7419 18.865 13.0056C18.6013 13.2694 18.4531 13.627 18.4531 14ZM6.73436 14C6.73436 14.373 6.88252 14.7306 7.14624 14.9944C7.40996 15.2581 7.76765 15.4062 8.14061 15.4062C8.51357 15.4062 8.87125 15.2581 9.13498 14.9944C9.3987 14.7306 9.54686 14.373 9.54686 14C9.54686 13.627 9.3987 13.2694 9.13498 13.0056C8.87125 12.7419 8.51357 12.5938 8.14061 12.5938C7.76765 12.5938 7.40996 12.7419 7.14624 13.0056C6.88252 13.2694 6.73436 13.627 6.73436 14V14ZM26.1055 8.91406C25.4433 7.34082 24.4941 5.92871 23.2842 4.71582C22.0827 3.50995 20.6563 2.55143 19.0859 1.89453C17.4746 1.21777 15.7637 0.875 14 0.875H13.9414C12.166 0.883789 10.4463 1.23535 8.82908 1.92676C7.27212 2.59039 5.85915 3.55062 4.66893 4.75391C3.47069 5.96387 2.53026 7.37012 1.87987 8.9375C1.20604 10.5605 0.866194 12.2861 0.874983 14.0615C0.884924 16.0961 1.36627 18.1007 2.28123 19.918V24.3711C2.28123 24.7285 2.42322 25.0713 2.67595 25.324C2.92869 25.5768 3.27147 25.7188 3.62889 25.7188H8.08494C9.90221 26.6337 11.9068 27.1151 13.9414 27.125H14.0029C15.7578 27.125 17.4599 26.7852 19.0625 26.1201C20.625 25.471 22.046 24.5237 23.2461 23.3311C24.456 22.1328 25.4082 20.7324 26.0732 19.1709C26.7646 17.5537 27.1162 15.834 27.125 14.0586C27.1338 12.2744 26.7881 10.543 26.1055 8.91406V8.91406ZM21.6787 21.7461C19.625 23.7793 16.9004 24.8984 14 24.8984H13.9502C12.1836 24.8896 10.4287 24.4502 8.87889 23.624L8.63279 23.4922H4.5078V19.3672L4.37596 19.1211C3.54979 17.5713 3.11033 15.8164 3.10155 14.0498C3.08983 11.1289 4.20604 8.38672 6.25389 6.32129C8.29881 4.25586 11.0322 3.11328 13.9531 3.10156H14.0029C15.4678 3.10156 16.8887 3.38574 18.2275 3.94824C19.5342 4.49609 20.706 5.28418 21.7138 6.29199C22.7187 7.29687 23.5097 8.47168 24.0576 9.77832C24.626 11.1318 24.9101 12.5674 24.9043 14.0498C24.8867 16.9678 23.7412 19.7012 21.6787 21.7461V21.7461Z' fill='white' /></svg>");
+    }
+
+    .btn2::before {
+        position: absolute;
+        left: -15px;
+        top: 12px;
+        content: url("data: image/svg+xml; charset=UTF-8, <svg width='28' height='25' viewBox='0 0 28 25' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M8.375 2C4.57813 2 1.5 5.07813 1.5 8.875C1.5 15.75 9.625 22 14 23.4538C18.375 22 26.5 15.75 26.5 8.875C26.5 5.07813 23.4219 2 19.625 2C17.3 2 15.2438 3.15438 14 4.92125C13.3661 4.01825 12.5239 3.28131 11.5447 2.77281C10.5656 2.2643 9.47831 1.99922 8.375 2Z' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' /></svg>");
+    }
+
+    .btn3::before {
+        position: absolute;
+        left: 55px;
+        top: 10px;
+        content: url("data: image/svg+xml; charset=UTF-8, <svg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M20.25 12.75L15.25 7.75V10.25C12.75 10.25 7.75 13 7.75 19C7.75 18.1663 9.25 15.25 15.25 15.25V17.75L20.25 12.75Z' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' /><path d='M14 26.5C20.9036 26.5 26.5 20.9036 26.5 14C26.5 7.09644 20.9036 1.5 14 1.5C7.09644 1.5 1.5 7.09644 1.5 14C1.5 20.9036 7.09644 26.5 14 26.5Z' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' /></svg>");
+    }
+}

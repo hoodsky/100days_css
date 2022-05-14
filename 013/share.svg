@@ -1,0 +1,8 @@
+<svg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <path
+        d='M20.25 12.75L15.25 7.75V10.25C12.75 10.25 7.75 13 7.75 19C7.75 18.1663 9.25 15.25 15.25 15.25V17.75L20.25 12.75Z'
+        stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' />
+    <path
+        d='M14 26.5C20.9036 26.5 26.5 20.9036 26.5 14C26.5 7.09644 20.9036 1.5 14 1.5C7.09644 1.5 1.5 7.09644 1.5 14C1.5 20.9036 7.09644 26.5 14 26.5Z'
+        stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' />
+</svg>

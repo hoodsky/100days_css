@@ -1,0 +1,64 @@
+@import 'animations';
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 3px;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    background: rgb(25, 112, 189);
+    background: -moz-radial-gradient(circle, rgba(25, 112, 189, 1) 0%, rgba(27, 57, 83, 1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(25, 112, 189, 1) 0%, rgba(27, 57, 83, 1) 100%);
+    background: radial-gradient(circle, rgba(25, 112, 189, 1) 0%, rgba(27, 57, 83, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1970bd", endColorstr="#1b3953", GradientType=1);
+    overflow: hidden;
+}
+.floor {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 150px;
+    background: #474747;
+}
+.men {
+    animation: fade-in .8s ease-out 1s;
+    animation-fill-mode: both;
+}
+.leg {
+    z-index: 4;
+    position: absolute;
+    top: 0px;
+    left: 150px;
+    width: 150px;
+    height: 250px;
+    transform-origin: 50% 0;
+    }
+.shoe {
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 50px;
+    background: url('https://i.ibb.co/RcQPRgP/Seek-Png-com-white-vans-png-1938283.png') no-repeat center center;
+    background-size: contain;
+    transform-origin: 0 95%;
+}
+
+.right {animation: leg-swing 2s ease-in-out 1s infinite;
+    .shoe {
+        animation: shoe-turn 2s ease-in-out 1s infinite;
+    }
+}
+
+.left {
+    animation: leg-swing 2s ease-in-out infinite;
+    .shoe {
+        animation: shoe-turn 2s ease-in-out infinite;
+    }
+}

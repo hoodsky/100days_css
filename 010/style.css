@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    background: #414141;
+    border-radius: 3px;
+    font-family: 'Ubuntu Mono',
+        monospace;
+}
+
+.center {
+    position: absolute;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2b2b2b;
+    z-index: 3;
+}
+
+.center::before {
+    position: absolute;
+    content: '';
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    z-index: 2;
+    border: 2px solid rgba(255, 0, 0, 0.308);
+}
+
+.pulse {
+    width: 320px;
+    height: 320px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background: #727272;
+    z-index: 0;
+    border-radius: 50%;
+    opacity: .8;
+    animation: 1s pulse 1s infinite;
+}
+
+@keyframes pulse-heart {
+    0% {
+        transform: scale(1) rotate(45deg);
+    }
+
+    5% {
+        transform: scale(1.2) rotate(45deg);
+    }
+
+    50% {
+        transform: scale(1) rotate(45deg);
+    }
+
+    100% {
+        transform: scale(1.01) rotate(45deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    5% {
+        transform: scale(1.05);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.01);
+    }
+}
+
+.clock {
+    z-index: 3;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+}
+
+.time {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.seconds {
+    position: absolute;
+    z-index: 100;
+    top: 0%;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    transform: rotate(0deg);
+    transition: all .1s ease-out;
+}
+
+.seconds::before {
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: -2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: red;
+}
+
+.heart {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: red;
+    top: 250px;
+    left: 150px;
+    z-index: 10;
+    transform: rotate(45deg);
+    animation: 1s pulse-heart 1s infinite;
+}
+
+.heart::before {
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: red;
+    top: -7px;
+    border-radius: 50% 50% 0 0;
+}
+
+.heart::after {
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: red;
+    left: -7px;
+    border-radius: 50% 0 0 50%;
+}
+
+span {
+    color: white;
+    position: absolute;
+    top: 243px;
+    left: 190px;
+    z-index: 10;
+}
