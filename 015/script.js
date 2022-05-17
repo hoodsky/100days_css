@@ -54,7 +54,7 @@ dropZone.addEventListener('drop', function (e) {
 function startUpload() {
     if (!uploading && fileName != '') {
         uploading = true;
-        button.innerHTML = 'Завантаження...'; // не вводится
+        button.innerHTML = 'Завантаження...'; // не вводиться
         dropZone.style.opacity = 0;
         syncing.classList.add('active');  //Uncaught TypeError: Cannot read properties of undefined (reading 'add')
         bar.classList.add('active');
