@@ -78,10 +78,33 @@ html {
   height: 2px;
   width: 100%;
   top: 49px;
+  left: 0;
+  -webkit-transition: all 3s ease-out;
+  transition: all 3s ease-out;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  background-color: green;
+}
+
+.card .bar.active {
+  -webkit-transform: scaleX(1) translate3d(0, 0, 0);
+          transform: scaleX(1) translate3d(0, 0, 0);
 }
 
 .card .dropzone {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: 1;
   width: 150px;
   height: 100px;
@@ -93,7 +116,7 @@ html {
   overflow: hidden;
 }
 
-.card .dropzone.is.dragover {
+.card .dropzone.is-dragover {
   border-color: #666;
   background: #eee;
 }
@@ -119,15 +142,13 @@ html {
   opacity: 0;
 }
 
-.card .dropzone .upload {
-  margin-top: 15px;
-}
-
 .card .dropzone .filename {
+  position: absolute;
   display: block;
   color: #666;
   font-size: 0.875rem;
   line-height: 1.125rem;
+  overflow: hidden;
 }
 
 .card .upload-btn {
@@ -146,6 +167,7 @@ html {
   cursor: pointer;
   -webkit-transition: all .3s;
   transition: all .3s;
+  border: none;
 }
 
 .card .upload-btn:hover {
@@ -155,7 +177,7 @@ html {
 
 .card .sync {
   position: absolute;
-  top: 100px;
+  top: 107px;
   left: 110px;
   opacity: 0;
 }
@@ -163,6 +185,20 @@ html {
 .card .sync.active {
   -webkit-animation: syncing 3s ease-in-out;
           animation: syncing 3s ease-in-out;
+}
+
+.card .done {
+  position: absolute;
+  top: 107px;
+  left: 110px;
+  opacity: 0;
+}
+
+.card.active {
+  -webkit-animation: done .5s ease-in 3.2s;
+          animation: done .5s ease-in 3.2s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
 @-webkit-keyframes syncing {
@@ -198,6 +234,24 @@ html {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes done {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes done {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=style.css.map */

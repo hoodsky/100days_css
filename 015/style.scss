@@ -76,11 +76,22 @@ html {
         height: 2px;
         width: 100%;
         top: 49px;
-        // background-color: green;
+        left: 0;
+        transition: all 3s ease-out;
+        transform: scaleX(0);
+        transform-origin: 0 0;
+        background-color: green;
+
+        &.active {
+            transform: scaleX(1) translate3d(0, 0, 0);
+        }
     }
 
     .dropzone {
         position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         z-index: 1;
         // box-sizing: border-box;
         // display: table;
@@ -94,7 +105,7 @@ html {
         text-align: center;
         overflow: hidden;
 
-        &.is.dragover {
+        &.is-dragover {
             border-color: #666;
             background: #eee;
         }
@@ -114,15 +125,13 @@ html {
             opacity: 0;
         }
 
-        .upload {
-            margin-top: 15px;
-        }
-
         .filename {
+            position: absolute;
             display: block;
             color: #666;
             font-size: rem(14);
             line-height: rem(18);
+            overflow: hidden;
         }
     }
 
@@ -138,6 +147,7 @@ html {
         color: #e7e7e7;
         cursor: pointer;
         transition: all .3s;
+        border: none;
 
         &:hover {
             box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
@@ -146,13 +156,25 @@ html {
 
     .sync {
         position: absolute;
-        top: 100px;
+        top: 107px;
         left: 280/2 - 30 + px;
         opacity: 0;
 
         &.active {
             animation: syncing 3s ease-in-out;
         }
+    }
+
+    .done {
+        position: absolute;
+        top: 107px;
+        left: 280/2 - 30 + px;
+        opacity: 0;
+    }
+
+    &.active {
+        animation: done .5s ease-in 3.2s;
+        animation-fill-mode: both;
     }
 }
 
@@ -175,5 +197,15 @@ html {
     100% {
         transform: rotate(360deg);
         opacity: 0;
+    }
+}
+
+@keyframes done {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
