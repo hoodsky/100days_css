@@ -41,15 +41,15 @@ dropZone.addEventListener('drop', function (e) {
     document.querySelector('.upload').style.opacity = 0;
 });
 
-// button.onclick = function () {
-//     startUpload();
-// };
+button.onclick = function () {
+    startUpload();
+};
 
-// input.addEventListener('change', function () {
-//     fileName = document.querySelector(this)[0].files[0].name;
-//     document.querySelector('.filename').innerHTML = fileName;
-//     document.querySelector('.dropzone .upload').style.opacity = 0;
-// })
+input.addEventListener('change', function (e) {
+    uploadFile = e.dataTransfer.files;
+    fileName = uploadFile[0]['name']
+})
+
 
 function startUpload() {
     if (!uploading && fileName != '') {
