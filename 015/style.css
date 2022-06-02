@@ -194,7 +194,7 @@ html {
   opacity: 0;
 }
 
-.card.active {
+.card .done.active {
   -webkit-animation: done .5s ease-in 3.2s;
           animation: done .5s ease-in 3.2s;
   -webkit-animation-fill-mode: both;
@@ -213,8 +213,8 @@ html {
     opacity: 1;
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
     opacity: 0;
   }
 }
@@ -231,8 +231,8 @@ html {
     opacity: 1;
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
     opacity: 0;
   }
 }

@@ -1,13 +1,13 @@
 let droppedFiles = false;
 let fileName = '';
-let dropZone = document.getElementById('dropzone');
-let button = document.getElementsByClassName('upload-btn');
+let dropZone = document.querySelector('#dropzone');
+let button = document.querySelector('.upload-btn');
 let uploading = false;
-let syncing = document.getElementsByClassName('sync');
-let done = document.getElementsByClassName('done');
-let bar = document.getElementsByClassName('bar');
+let syncing = document.querySelector('.sync');
+let done = document.querySelector('.done');
+let bar = document.querySelector('.bar');
 let timeOut;
-let input = document.getElementsByClassName('input');
+let input = document.querySelector('.input');
 
 dropZone.addEventListener("drag dragstart dragend dragover dragenter dragleave drop", function (e) {
     e.preventDefault();
@@ -45,19 +45,23 @@ button.onclick = function () {
     startUpload();
 };
 
-input.addEventListener('change', function (e) {
-    uploadFile = e.dataTransfer.files;
-    fileName = uploadFile[0]['name']
+
+input.addEventListener('change', function () {
+    uploadFiles = document.querySelector('.input').files[0];
+    fileName = uploadFiles.name;
+    document.querySelector('.filename').innerHTML = fileName;
+    document.querySelector('.upload').style.opacity = 0;
 })
 
 
 function startUpload() {
     if (!uploading && fileName != '') {
         uploading = true;
-        button.innerHTML = 'Завантаження...'; // не вводиться
+        button.innerHTML = 'Завантаження...';
         dropZone.style.opacity = 0;
-        syncing.classList.add('active');  //Uncaught TypeError: Cannot read properties of undefined (reading 'add')
+        syncing.classList.add('active');
         bar.classList.add('active');
+        done.classList.add('active');
         timeOut = window.setTimeout(showDone, 3200);
     };
 };
