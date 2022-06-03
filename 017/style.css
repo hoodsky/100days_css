@@ -1,0 +1,86 @@
+.frame {
+  position: absolute;
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
+  width: 400px;
+  height: 400px;
+  border-radius: 3px;
+  -webkit-box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.frame .background {
+  position: relative;
+  top: -70px;
+  left: -100px;
+  width: 600px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.frame .background .back {
+  background: #1a1a1a;
+  width: 600px;
+  height: 3px;
+  margin-bottom: 20px;
+}
+
+.frame .center {
+  width: 260px;
+  height: 260px;
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  background: #333333;
+}
+
+.frame .polygon {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.frame .polygon:hover .gray {
+  fill: #4d4d4d;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.frame .polygon:hover .dark {
+  fill: #b3b3b3;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.frame .polygon:hover .light {
+  fill: gray;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.frame .polygon .gray {
+  fill: gray;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.frame .polygon .dark {
+  fill: #4d4d4d;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.frame .polygon .light {
+  fill: #b3b3b3;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+/*# sourceMappingURL=style.css.map */
