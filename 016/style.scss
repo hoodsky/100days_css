@@ -1,0 +1,19 @@
+.frame {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 3px;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    background: rgb(25, 128, 80);
+    overflow: hidden;
+
+    .round {}
+}
