@@ -1,0 +1,68 @@
+$block1: hsl(138, 100%, 18%);
+$block2: hsl(207, 100%, 18%);
+$block3: hsl(305, 100%, 18%);
+
+.content {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.background {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: 1s ease-in-out;
+
+    [class^=block] {
+        width: 100%;
+        height: 100%;
+    }
+
+    .block1 {
+        background: $block1;
+    }
+
+    .block2 {
+        background: $block2;
+    }
+
+    .block3 {
+        background: $block3;
+    }
+}
+
+.dots {
+    position: absolute;
+    top: calc(50% - 18px);
+    left: calc(50% - 50px);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+
+    [class^=dot] {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .dot-active {
+        border: none;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: #FFF;
+        transform: translateX(-47px);
+        margin: auto;
+        transition: 1s ease-in-out;
+    }
+}

@@ -1,0 +1,80 @@
+$circle-color: #123456;
+$button-color: #654321;
+$back-color: #d5eef1;
+
+.content {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background: $back-color;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: $circle-color;
+    border-radius: 50%;
+    top: 70px;
+    left: 100px;
+}
+
+button {
+    position: absolute;
+    border-radius: 100px;
+    padding: 15px 25px;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    border: none;
+    background: $button-color;
+    border-radius: 100px;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.letter {
+    position: absolute;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 0;
+    transition: 1s ease-in-out;
+
+    &.hide {
+        stroke-dashoffset: 300;
+        transition: 1s ease-in-out;
+    }
+}
+
+.airplane {
+    @extend .letter;
+    stroke-dashoffset: 300;
+    opacity: 0;
+
+    &.show {
+        stroke-dashoffset: 0;
+        opacity: 1;
+        transition: 1s ease-in-out 1s;
+    }
+}
+
+.send {
+    &.active {
+        transform: translateX(-50%) scale(0);
+        transition: all .5s;
+    }
+}
+
+.reset {
+    transform: translateX(-50%) scale(0);
+
+    &.active {
+        transform: translateX(-50%) scale(1);
+        transition: .5s all .5s;
+    }
+}

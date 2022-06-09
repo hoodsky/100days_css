@@ -1,0 +1,78 @@
+.content {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.background {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300%;
+  height: 100%;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.background [class^=block] {
+  width: 100%;
+  height: 100%;
+}
+
+.background .block1 {
+  background: #005c1c;
+}
+
+.background .block2 {
+  background: #00325c;
+}
+
+.background .block3 {
+  background: #5c0054;
+}
+
+.dots {
+  position: absolute;
+  top: calc(50% - 18px);
+  left: calc(50% - 50px);
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+}
+
+.dots [class^=dot] {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots .dot-active {
+  border: none;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #FFF;
+  -webkit-transform: translateX(-47px);
+          transform: translateX(-47px);
+  margin: auto;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+/*# sourceMappingURL=style.css.map */
