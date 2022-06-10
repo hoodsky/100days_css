@@ -8,5 +8,4 @@ send.addEventListener('click', () => {
     airplane.classList.add('show');
     send.classList.add('active');
     reset.classList.add('active');
-
 })

@@ -1,6 +1,7 @@
 $circle-color: #123456;
 $button-color: #654321;
-$back-color: #d5eef1;
+$back-color: #606f70;
+$done-color: rgb(1, 77, 1);
 
 .content {
     width: 400px;
@@ -22,59 +23,110 @@ $back-color: #d5eef1;
     border-radius: 50%;
     top: 70px;
     left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
     position: absolute;
-    border-radius: 100px;
-    padding: 15px 25px;
     bottom: 50px;
     left: 50%;
     transform: translateX(-50%) scale(1);
     border: none;
     background: $button-color;
     border-radius: 100px;
-    padding: 15px 25px;
+    padding: 15px 0;
+    color: #fff;
+    width: 180px;
     cursor: pointer;
     transition: all .5s;
 }
 
 .letter {
     position: absolute;
-    stroke-dasharray: 300;
+    stroke-dasharray: 400;
     stroke-dashoffset: 0;
     transition: 1s ease-in-out;
+    transform: scale(.5, .4);
 
     &.hide {
-        stroke-dashoffset: 300;
+        stroke-dashoffset: 400;
         transition: 1s ease-in-out;
     }
 }
 
 .airplane {
     @extend .letter;
-    stroke-dashoffset: 300;
+    stroke-dashoffset: 400;
     opacity: 0;
 
     &.show {
         stroke-dashoffset: 0;
         opacity: 1;
         transition: 1s ease-in-out 1s;
+        animation: airplane 1s ease-in-out 2s;
+        animation-fill-mode: both;
     }
 }
 
 .send {
     &.active {
-        transform: translateX(-50%) scale(0);
-        transition: all .5s;
+        animation: send-btn 2s ease-in-out;
+        animation-fill-mode: both;
     }
 }
 
 .reset {
-    transform: translateX(-50%) scale(0);
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+    background: $done-color;
 
     &.active {
+        opacity: 1;
+        transition: all 1s 2.5s ease-in-out;
+        pointer-events: all;
+    }
+}
+
+@keyframes send-btn {
+    0% {
         transform: translateX(-50%) scale(1);
-        transition: .5s all .5s;
+    }
+
+    30% {
+        width: 180px;
+        background: $done-color;
+        color: transparent;
+    }
+
+    50%,
+    60% {
+        width: 45px;
+        transform: translateX(-50%) scale(1);
+    }
+
+    70% {
+        transform: translateX(-50%) scale(1.1);
+    }
+
+    100% {
+        transform: translateX(-50%) scale(0);
+        background: $done-color;
+        color: transparent;
+        width: 45px;
+    }
+}
+
+@keyframes airplane {
+    from {
+        transform: translate(0, 0) scale(.5, .4);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(100px, -100px) scale(.2, .1);
+        opacity: 0;
     }
 }
