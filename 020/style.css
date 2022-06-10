@@ -33,9 +33,7 @@
 button {
   position: absolute;
   bottom: 50px;
-  left: 50%;
-  -webkit-transform: translateX(-50%) scale(1);
-          transform: translateX(-50%) scale(1);
+  left: 110px;
   border: none;
   background: #654321;
   border-radius: 100px;
@@ -45,6 +43,12 @@ button {
   cursor: pointer;
   -webkit-transition: all .5s;
   transition: all .5s;
+}
+
+button:hover {
+  background: #014d01;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .letter, .airplane {
@@ -84,11 +88,11 @@ button {
           animation: send-btn 2s ease-in-out;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .reset {
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   opacity: 0;
   pointer-events: none;
   background: #014d01;
@@ -99,88 +103,106 @@ button {
   -webkit-transition: all 1s 2.5s ease-in-out;
   transition: all 1s 2.5s ease-in-out;
   pointer-events: all;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 @-webkit-keyframes send-btn {
   0% {
-    -webkit-transform: translateX(-50%) scale(1);
-            transform: translateX(-50%) scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   30% {
     width: 180px;
+    left: 110px;
     background: #014d01;
     color: transparent;
   }
   50%,
   60% {
     width: 45px;
-    -webkit-transform: translateX(-50%) scale(1);
-            transform: translateX(-50%) scale(1);
+    left: 177.5px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   70% {
-    -webkit-transform: translateX(-50%) scale(1.1);
-            transform: translateX(-50%) scale(1.1);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   100% {
-    -webkit-transform: translateX(-50%) scale(0);
-            transform: translateX(-50%) scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
     background: #014d01;
     color: transparent;
     width: 45px;
+    left: 177.5px;
   }
 }
 
 @keyframes send-btn {
   0% {
-    -webkit-transform: translateX(-50%) scale(1);
-            transform: translateX(-50%) scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   30% {
     width: 180px;
+    left: 110px;
     background: #014d01;
     color: transparent;
   }
   50%,
   60% {
     width: 45px;
-    -webkit-transform: translateX(-50%) scale(1);
-            transform: translateX(-50%) scale(1);
+    left: 177.5px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   70% {
-    -webkit-transform: translateX(-50%) scale(1.1);
-            transform: translateX(-50%) scale(1.1);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   100% {
-    -webkit-transform: translateX(-50%) scale(0);
-            transform: translateX(-50%) scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
     background: #014d01;
     color: transparent;
     width: 45px;
+    left: 177.5px;
   }
 }
 
 @-webkit-keyframes airplane {
-  from {
+  0% {
     -webkit-transform: translate(0, 0) scale(0.5, 0.4);
             transform: translate(0, 0) scale(0.5, 0.4);
     opacity: 1;
   }
-  to {
-    -webkit-transform: translate(100px, -100px) scale(0.2, 0.1);
-            transform: translate(100px, -100px) scale(0.2, 0.1);
+  25% {
+    -webkit-transform: translate(-5px, 5px) scale(0.5, 0.4);
+            transform: translate(-5px, 5px) scale(0.5, 0.4);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate(150px, -150px) scale(0.2, 0.1);
+            transform: translate(150px, -150px) scale(0.2, 0.1);
     opacity: 0;
   }
 }
 
 @keyframes airplane {
-  from {
+  0% {
     -webkit-transform: translate(0, 0) scale(0.5, 0.4);
             transform: translate(0, 0) scale(0.5, 0.4);
     opacity: 1;
   }
-  to {
-    -webkit-transform: translate(100px, -100px) scale(0.2, 0.1);
-            transform: translate(100px, -100px) scale(0.2, 0.1);
+  25% {
+    -webkit-transform: translate(-5px, 5px) scale(0.5, 0.4);
+            transform: translate(-5px, 5px) scale(0.5, 0.4);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate(150px, -150px) scale(0.2, 0.1);
+            transform: translate(150px, -150px) scale(0.2, 0.1);
     opacity: 0;
   }
 }
