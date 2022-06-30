@@ -106,8 +106,8 @@
   width: 4px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 1s linear 1s infinite;
-          animation: street 1s linear 1s infinite;
+  -webkit-animation: street 0.9s linear 0.5s infinite;
+          animation: street 0.9s linear 0.5s infinite;
 }
 
 .card .front .street .stripe-2 {
@@ -118,8 +118,8 @@
   width: 6px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 0.9s linear 0.6s infinite;
-          animation: street 0.9s linear 0.6s infinite;
+  -webkit-animation: street 0.9s linear 0.9s infinite;
+          animation: street 0.9s linear 0.9s infinite;
 }
 
 .card .front .street .stripe-3 {
@@ -130,8 +130,8 @@
   width: 8px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 1s linear 0.9s infinite;
-          animation: street 1s linear 0.9s infinite;
+  -webkit-animation: street 0.9s linear 0.8s infinite;
+          animation: street 0.9s linear 0.8s infinite;
 }
 
 .card .front .street .stripe-4 {
@@ -142,8 +142,8 @@
   width: 10px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 0.9s linear 0.2s infinite;
-          animation: street 0.9s linear 0.2s infinite;
+  -webkit-animation: street 1s linear 0.3s infinite;
+          animation: street 1s linear 0.3s infinite;
 }
 
 .card .front .street .stripe-5 {
@@ -166,8 +166,8 @@
   width: 14px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 1s linear 0.5s infinite;
-          animation: street 1s linear 0.5s infinite;
+  -webkit-animation: street 1s linear 1s infinite;
+          animation: street 1s linear 1s infinite;
 }
 
 .card .front .street .stripe-7 {
@@ -178,8 +178,8 @@
   width: 16px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 0.9s linear 0.2s infinite;
-          animation: street 0.9s linear 0.2s infinite;
+  -webkit-animation: street 1s linear 0.4s infinite;
+          animation: street 1s linear 0.4s infinite;
 }
 
 .card .front .street .stripe-8 {
@@ -190,8 +190,8 @@
   width: 18px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 1s linear 0.4s infinite;
-          animation: street 1s linear 0.4s infinite;
+  -webkit-animation: street 0.9s linear 0.1s infinite;
+          animation: street 0.9s linear 0.1s infinite;
 }
 
 .card .front .street .stripe-9 {
@@ -202,8 +202,8 @@
   width: 20px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 1s linear 0.6s infinite;
-          animation: street 1s linear 0.6s infinite;
+  -webkit-animation: street 1s linear 0.9s infinite;
+          animation: street 1s linear 0.9s infinite;
 }
 
 .card .back {
@@ -234,11 +234,11 @@
   right: -25px;
   top: 14px;
   height: 5px;
-  width: 16px;
+  width: 22.6px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 0.9s linear 0.8s infinite;
-          animation: street 0.9s linear 0.8s infinite;
+  -webkit-animation: street 1s linear 0.4s infinite;
+          animation: street 1s linear 0.4s infinite;
 }
 
 .card .back .sky .cloud-2 {
@@ -246,11 +246,11 @@
   right: -25px;
   top: 28px;
   height: 5px;
-  width: 15px;
+  width: 22.7px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 0.9s linear 0.5s infinite;
-          animation: street 0.9s linear 0.5s infinite;
+  -webkit-animation: street 1s linear 0.8s infinite;
+          animation: street 1s linear 0.8s infinite;
 }
 
 .card .back .sky .cloud-3 {
@@ -258,11 +258,11 @@
   right: -25px;
   top: 42px;
   height: 5px;
-  width: 11.4px;
+  width: 14px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 1s linear 0.5s infinite;
-          animation: street 1s linear 0.5s infinite;
+  -webkit-animation: street 1s linear 0.6s infinite;
+          animation: street 1s linear 0.6s infinite;
 }
 
 .card .back .sky .cloud-4 {
@@ -270,11 +270,11 @@
   right: -25px;
   top: 56px;
   height: 5px;
-  width: 13.3px;
+  width: 22.7px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 0.9s linear 0.5s infinite;
-          animation: street 0.9s linear 0.5s infinite;
+  -webkit-animation: street 0.9s linear 1s infinite;
+          animation: street 0.9s linear 1s infinite;
 }
 
 .card .back .sky .cloud-5 {
@@ -282,11 +282,11 @@
   right: -25px;
   top: 70px;
   height: 5px;
-  width: 21.1px;
+  width: 17.6px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 1s linear 0.8s infinite;
-          animation: street 1s linear 0.8s infinite;
+  -webkit-animation: street 1s linear 0.6s infinite;
+          animation: street 1s linear 0.6s infinite;
 }
 
 .card .back .sky .cloud-6 {
@@ -294,11 +294,11 @@
   right: -25px;
   top: 84px;
   height: 5px;
-  width: 19.2px;
+  width: 24.8px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 1s linear 0.5s infinite;
-          animation: street 1s linear 0.5s infinite;
+  -webkit-animation: street 1s linear 0.3s infinite;
+          animation: street 1s linear 0.3s infinite;
 }
 
 .card .back .sky .cloud-7 {
@@ -306,11 +306,11 @@
   right: -25px;
   top: 98px;
   height: 5px;
-  width: 14.5px;
+  width: 24.1px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 0.9s linear 1s infinite;
-          animation: street 0.9s linear 1s infinite;
+  -webkit-animation: street 1s linear 1s infinite;
+          animation: street 1s linear 1s infinite;
 }
 
 .card .back .sky .cloud-8 {
@@ -318,11 +318,11 @@
   right: -25px;
   top: 112px;
   height: 5px;
-  width: 11.9px;
+  width: 23.2px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 1s linear 0.8s infinite;
-          animation: street 1s linear 0.8s infinite;
+  -webkit-animation: street 0.9s linear 1s infinite;
+          animation: street 0.9s linear 1s infinite;
 }
 
 .card .back .sky .cloud-9 {
@@ -330,11 +330,11 @@
   right: -25px;
   top: 126px;
   height: 5px;
-  width: 13.9px;
+  width: 17.6px;
   background-color: #2b2b2b;
   border-radius: 5px;
-  -webkit-animation: street 1s linear 0.8s infinite;
-          animation: street 1s linear 0.8s infinite;
+  -webkit-animation: street 0.9s linear 0.2s infinite;
+          animation: street 0.9s linear 0.2s infinite;
 }
 
 @-webkit-keyframes bike {
